@@ -1,10 +1,13 @@
 <h1>Search</h1>
 
+<p>Search for a tutor here:
+
 <%= form_tag(search_index_path, :method => "get") do %>
 	  <%= label_tag(:q1, "Class:") %>
 	  <%= text_field_tag(:q1) %>
 	  <%= label_tag(:q2, "University:") %>
 	  <%= text_field_tag(:q2) %><br>
 	  <%= label_tag(:q3, "Grade:") %>
+	  <%= select_tag(:q3, "<option>A</option><option>B</option><option>C</option>".html_safe) %><br>
 	  <%= submit_tag("Search") %>
-	<% end %>
+<% end %>
