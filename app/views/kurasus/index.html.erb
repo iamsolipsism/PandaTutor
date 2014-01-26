@@ -1,0 +1,22 @@
+<h1>Listing Classes</h1>
+<%= link_to 'New Class', new_kurasu_path %>
+<table>
+  <tr>
+    <th>Department</th>
+    <th>Grades</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+ 
+<% @kurasus.each do |kurasu| %>
+  <tr>
+    <td><%= kurasu.department %></td>
+    <td><%= kurasu.grade %></td>
+    <td><%= link_to 'Show', kurasu_path(kurasu) %></td>
+    <td><%= link_to 'Edit', edit_kurasu_path(kurasu) %></td>
+    <td><%= link_to 'Destroy', kurasu_path(kurasu),
+                    method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>

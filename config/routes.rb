@@ -1,5 +1,7 @@
 SampleApp::Application.routes.draw do
+  get "welcome/index"
 	resources :users
+  resources :kurasus
 	resources :sessions, only: [:new, :create, :destroy]
 	root 'static_pages#home'
   match '/help',    to: 'static_pages#help',    via: 'get'

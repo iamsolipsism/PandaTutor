@@ -1,0 +1,2 @@
+module KurasusHelper
+end

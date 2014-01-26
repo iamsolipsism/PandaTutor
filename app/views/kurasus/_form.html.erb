@@ -1,0 +1,26 @@
+<%= form_for @kurasu do |f| %>
+  <% if @kurasu.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@kurasu.errors.count, "error") %> prohibited
+      this class from being saved:</h2>
+    <ul>
+    <% @kurasu.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <p>
+    <%= f.label :department %><br>
+    <%= f.text_field :department %>
+  </p>
+ 
+  <p>
+    <%= f.label :grade %><br>
+    <%= f.text_field :grade %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
