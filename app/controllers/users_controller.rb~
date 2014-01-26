@@ -43,10 +43,13 @@ respond_to :json, :xml
   end
 
 	def create
-    @user = User.new(user_params)
+    uniID = user_params[:university].downcase.gsub!(/\s/,'')
+    @user = User.new(user_params, :universityIdentifier => uniID)
+    puts "hi"
+    puts @user.universityIdentifier
     if @user.save
       sign_in @user
-      flash[:success] = "Welcome to the Sample App!"
+      flash[:success] = "Welcome to PandaTutor!"
       redirect_to @user
     else
       render 'new'
@@ -64,7 +67,7 @@ respond_to :json, :xml
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation, :avatar)
+                                   :password_confirmation, :university, :avatar)
     end
 
     # Before filters
