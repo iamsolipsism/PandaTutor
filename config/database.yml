@@ -18,11 +18,11 @@ test:
   pool: 5
   timeout: 5000
 
-production:
+development:
   adapter: postgresql
+  encoding: unicode
   database: db/production.postgresql
   pool: 5
-  timeout: 5000
 
  # re-generated from your development database when you run "rake".
  # Do not set this db to the same as development or production.
