@@ -178,7 +178,11 @@ DEPENDENCIES
   faker (= 1.1.2)
   jbuilder (= 1.0.2)
   jquery-rails (= 3.0.4)
+<<<<<<< HEAD
   pg
+=======
+  pg (= 0.15.1)
+>>>>>>> Update Gemfile.lock for Heroku
   rails (= 4.0.2)
   rails_12factor (= 0.0.2)
   rspec-rails (= 2.13.1)
