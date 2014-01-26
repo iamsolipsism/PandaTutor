@@ -18,6 +18,15 @@
       <%= f.label :password_confirmation, "Confirm Password" %>
       <%= f.password_field :password_confirmation %>
 
+      <%= f.label :birth_date, "Birthday" %>
+      <%= f.label_field :birth_date %>
+
+      <%= f.label :gender %>
+      <%= f.label_field :gender %>
+
+      <%= f.label :university, "Current Universtiy/College" %>
+      <%= f.label :university %>
+
       <%= f.file_field :avatar %>
 
       <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
