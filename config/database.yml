@@ -21,7 +21,7 @@ test:
   username: postgres
   password: panda
 
-production:
+development:
   adapter: postgresql
   encoding: unicode
   database: db/production
