@@ -4,7 +4,10 @@
     <section>
       <h1>
         <%= image_tag @user.avatar_url.to_s %>
-        <%= @user.name %>
+        <center><%= @user.name %><br>
+        Studies at: <%= @user.university %><br>
+        Contact at:<%= @user.email %><br>
+</center>
       </h1>
     </section>
   </aside>
