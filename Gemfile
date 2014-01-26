@@ -14,8 +14,7 @@ gem 'bootstrap-will_paginate', '0.0.9'
 gem 'carrierwave'
 
 group :development, :test do
-  # gem 'sqlite3', '1.3.8'
-  gem 'pg', '0.15.1'
+  gem 'sqlite3', '1.3.8'
   gem 'rspec-rails', '2.13.1'
 end
 
@@ -38,5 +37,5 @@ end
 
 group :production do
   gem 'pg', '0.15.1'
-  gem 'rails_12factor', '0.0.2'
+  gem 'rails_12factor'
 end
