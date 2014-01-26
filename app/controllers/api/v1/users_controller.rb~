@@ -18,7 +18,9 @@ class UsersController < ApplicationController
 
   def index
 #    @users = User.where("name = ? or university = ? or grade = ?", params[:name], params[:email], params[:grade])
-#sample api call: http://localhost:3000/api/v1/users?name=Rylai&email=DontPlayLeague@gmail.com
+#sample api call: http://localhost:3000/api/v1/users.json?university=doe&courseName=aa&grade=d
+#note all 3 must be present to make the call
+
     @users = User.where("university = ?", params[:university])
 
 flagHasTakenWithGrade = false #assume false by default
@@ -32,7 +34,7 @@ for index1 in 0 ... @users.size
       flagHasTakenWithGrade = true
     end
   end
-  if(!flagHasTakenWithGrade)
+  if(flagHasTakenWithGrade)
     @users.delete_at(index1)
 end
 end
