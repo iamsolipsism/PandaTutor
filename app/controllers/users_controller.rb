@@ -64,7 +64,7 @@ respond_to :json, :xml
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation, :avatar)
+                                   :password_confirmation, :university, :avatar)
     end
 
     # Before filters

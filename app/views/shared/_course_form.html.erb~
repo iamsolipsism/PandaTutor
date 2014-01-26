@@ -4,8 +4,12 @@
   <div class="field">
     <%= f.text_field :courseName, placeholder: "Add New Course..." %>
   </div>
-  
-  <%= f.submit "Post Course Info", class: "btn btn-large btn-primary" %>
+<h1>Select The Grade You Got </h1>
+  <div class="field">
+    <%= f.select :grade, [['A','A'],['B','B'],['C','C'],['D','D'],['F','F']] %>
+  </div>
+  <%= f.submit "Post Course Info", class: "btn btn-large btn-primary" %><br>
+  <%= f.submit "Upload Verification of Grades", class: "btn btn-large btn-primary" %>
 <% end %>
 
 
