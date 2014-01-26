@@ -31,7 +31,7 @@ class KurasusController < ApplicationController
 	def update
 		@kurasu = Kurasu.find(params[:id])
 
-		if @kurasu.update(params[:kurasu].permit(:courses, :grade))
+		if @kurasu.update(params[:kurasu].permit(:kurasu, :grade))
 			redirect_to @kurasu
 		else
 			render 'edit'

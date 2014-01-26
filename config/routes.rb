@@ -1,11 +1,12 @@
 SampleApp::Application.routes.draw do
 namespace :api do
   namespace :v1 do
+   resources :login, :defaults => { :format => 'json' }
    resources :users, :defaults => { :format => 'json' }
   end
 end
+        resources :kurasus
 	resources :users
-  resources :kurasus
 	resources :sessions, only: [:new, :create, :destroy]
   resources :search
 
