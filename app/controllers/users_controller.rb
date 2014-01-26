@@ -19,6 +19,7 @@ respond_to :json, :xml
 
   def show
     @user = User.find(params[:id])
+    @courses = @user.courses.paginate(page: params[:page])
     #respond_to do |format|
      # format.json { render json: @user }
       #format.xml { render xml: @user }
