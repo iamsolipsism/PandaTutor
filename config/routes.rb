@@ -6,6 +6,7 @@ namespace :api do
   end
 end
         resources :kurasus
+        resources :courses
 	resources :users
 	resources :sessions, only: [:new, :create, :destroy]
         resources :courses, only: [:create, :destroy]

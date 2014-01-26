@@ -86,6 +86,7 @@ p {
 footer {
   margin-top: 45px;
   padding-top: 5px;
+  padding-right: 150px;
   border-top: 1px solid $grayMediumLight;
   color: $grayLight;
   a {
@@ -96,6 +97,7 @@ footer {
   }
   small {
     float: left;
+    padding-left: 150px;
   }
   ul {
     float: right;
@@ -111,6 +113,7 @@ footer {
 /* miscellaneous */
 
 .debug_dump {
+  display: none;
   clear: both;
   float: left;
   width: 100%;
