@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.where("name = ? or university = ? or grade = ?", params[:name], params[:email], params[:grade])
+    @users = User.where("name = ? or email = ?", params[:name], params[:email])
     respond_to do |format|
       format.json { render json: @users }
       format.xml { render xml: @users }
