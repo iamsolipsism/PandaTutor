@@ -3,7 +3,7 @@ ruby '1.9.3'
 #ruby-gemset=railstutorial_rails_4_0
 
 gem 'rails', '4.0.2'
-gem 'unicorn'
+
 gem 'bootstrap-sass', '2.3.2.0'
 gem 'pg'
 gem 'bcrypt-ruby', '~> 3.1.0'
@@ -35,5 +35,6 @@ group :doc do
 end
 
 group :production do
+	# gem 'unicorn'
   gem 'rails_12factor', '0.0.2'
 end
