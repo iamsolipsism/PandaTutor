@@ -18,6 +18,8 @@
         <%= render @courses %>
       </ol>
       <%= will_paginate @courses %>
+<% else %>
+<h3> This person has not taken any courses yet!</h3>
     <% end %>
   </div>
 </div>
