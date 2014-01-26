@@ -4,7 +4,7 @@ ruby '1.9.3'
 
 gem 'rails', '4.0.2'
 gem 'bootstrap-sass', '2.3.2.0'
-
+gem 'pg'
 gem 'bcrypt-ruby', '~> 3.1.0'
 
 gem 'faker', '1.1.2'
@@ -12,8 +12,8 @@ gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 gem 'carrierwave'
 
-group :development, :test do
-  
+
+group :development, :test do  
   gem 'rspec-rails', '2.13.1'
 end
 
@@ -35,7 +35,5 @@ group :doc do
 end
 
 group :production do 
-  gem 'pg'
-  gem 'rails_12factor'
-
+  gem 'rails_12factor', '0.0.2'
 end

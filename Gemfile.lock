@@ -180,7 +180,7 @@ DEPENDENCIES
   jquery-rails (= 3.0.4)
   pg
   rails (= 4.0.2)
-  rails_12factor
+  rails_12factor (= 0.0.2)
   rspec-rails (= 2.13.1)
   sass-rails (= 4.0.1)
   sdoc (= 0.3.20)
