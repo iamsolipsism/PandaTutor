@@ -43,10 +43,11 @@ respond_to :json, :xml
   end
 
 	def create
-    @user = User.new(user_params)
+    uniID = user_params[:university].downcase.gsub!(/\s/,'')
+    @user = User.new(user_params, :universityIdentifier => uniID)
     if @user.save
       sign_in @user
-      flash[:success] = "Welcome to the Panda Tutor!"
+      flash[:success] = "Welcome to PandaTutor!"
       redirect_to @user
     else
       render 'new'
