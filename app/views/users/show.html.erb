@@ -6,7 +6,7 @@
         <%= image_tag @user.avatar_url.to_s %>
         <center><%= @user.name %><br>
         Studies at: <%= @user.university %><br>
-        Contact at:<%= @user.email %><br>
+        Contact at: <%= @user.email %><br>
 </center>
       </h1>
     </section>
@@ -19,7 +19,7 @@
       </ol>
       <%= will_paginate @courses %>
 <% else %>
-<h3> This person has not taken any courses yet!</h3>
+<h3> <%= @user.name %> has not taken any courses yet!</h3>
     <% end %>
   </div>
 </div>
