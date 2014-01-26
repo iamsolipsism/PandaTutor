@@ -34,6 +34,8 @@ group :doc do
   gem 'sdoc', '0.3.20', require: false
 end
 
-gem 'pg'
-gem 'rails_12factor', group: :production
+group :production do 
+  gem 'pg'
+  gem 'rails_12factor'
+
 end
