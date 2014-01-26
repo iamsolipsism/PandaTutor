@@ -8,6 +8,7 @@ end
         resources :kurasus
 	resources :users
 	resources :sessions, only: [:new, :create, :destroy]
+        resources :courses, only: [:create, :destroy]
   resources :search
 
 	root 'static_pages#home'

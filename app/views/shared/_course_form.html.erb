@@ -1,0 +1,13 @@
+<%= form_for(@course) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+<h1>Add New Course </h1>
+  <div class="field">
+    <%= f.text_field :courseName, placeholder: "Add New Course..." %>
+  </div>
+  <div class="field">
+    <%= f.text_field :grade, placeholder: "What was your grade?" %>
+  </div>
+  <%= f.submit "Post Course Info", class: "btn btn-large btn-primary" %>
+<% end %>
+
+

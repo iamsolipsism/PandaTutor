@@ -1,5 +1,17 @@
+<% if signed_in? %>
+  <div class="row">
+    <aside class="span4">
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+  </div>
+<% else %>
 <div class="center hero-unit">
-  <h1>Welcome to TutorPanda!</h1>
+  <h1>Welcome to PandaTutor!</h1>
 <%= link_to image_tag("panda.png", alt: ""), '' %>
   <h2>
     You've taken the class. You've made the grade. Now make bank.
@@ -7,7 +19,7 @@
 
   <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
 </div>
-
+<% end %>
 
 
 <!--<%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>-->

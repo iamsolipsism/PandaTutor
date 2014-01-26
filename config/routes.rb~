@@ -5,9 +5,10 @@ namespace :api do
    resources :users, :defaults => { :format => 'json' }
   end
 end
-        resources :courses
+        resources :kurasus
 	resources :users
 	resources :sessions, only: [:new, :create, :destroy]
+        resources :microposts, only: [:create, :destroy]
   resources :search
 
 	root 'static_pages#home'
