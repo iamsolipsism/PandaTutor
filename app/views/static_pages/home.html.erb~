@@ -1,5 +1,5 @@
 <div class="center hero-unit">
-  <h1>Welcome to PandaTutor!</h1>
+  <h1>Welcome to TutorPanda!</h1>
 <%= link_to image_tag("panda.png", alt: ""), '' %>
   <h2>
     You've taken the class. You've made the grade. Now make bank.

@@ -20,6 +20,13 @@ class UsersController < ApplicationController
 #    @users = User.where("name = ? or university = ? or grade = ?", params[:name], params[:email], params[:grade])
 #sample api call: http://localhost:3000/api/v1/users?name=Rylai&email=DontPlayLeague@gmail.com
     @users = User.where("name = ? or email = ?", params[:name], params[:email])
+#for index in 0 ... @users.size
+ # if (@users[index].kurasus.where("class = ?", params[:class]) == nil)
+  #  @users.delete_at(index)
+  #end
+#end
+
+
     respond_to do |format|
       format.json { render json: @users }
       format.xml { render xml: @users }
