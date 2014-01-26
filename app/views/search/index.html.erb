@@ -2,12 +2,12 @@
 
 <p>Search for a tutor here:
 
-<%= form_tag(search_index_path, :method => "get") do %>
-	  <%= label_tag(:q1, "Class:") %>
-	  <%= text_field_tag(:q1) %>
-	  <%= label_tag(:q2, "University:") %>
-	  <%= text_field_tag(:q2) %><br>
-	  <%= label_tag(:q3, "Grade:") %>
-	  <%= select_tag(:q3, "<option>A</option><option>B</option><option>C</option>".html_safe) %><br>
+<%= form_tag(search_path(:id), :method => "get") do %>
+	  <%= label_tag(:class, "Class:") %>
+	  <%= text_field_tag(:class) %>
+	  <%= label_tag(:university, "University:") %>
+	  <%= text_field_tag(:university) %><br>
+	  <%= label_tag(:grade, "Grade:") %>
+	  <%= select_tag(:grade, "<option>A</option><option>B</option><option>C</option>".html_safe) %><br>
 	  <%= submit_tag("Search") %>
 <% end %>
