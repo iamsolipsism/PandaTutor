@@ -11,11 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140126002622) do
+ActiveRecord::Schema.define(version: 20140126011732) do
 
   create_table "kurasus", force: true do |t|
     t.string   "department"
     t.string   "grade"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "searches", force: true do |t|
@@ -31,6 +33,7 @@ ActiveRecord::Schema.define(version: 20140126002622) do
     t.string   "password_digest"
     t.string   "remember_token"
     t.boolean  "admin",           default: false
+    t.string   "avatar"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
