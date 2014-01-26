@@ -1,28 +1,25 @@
-class UsersController < ApplicationController
-  before_action :signed_in_user, only: [:index, :edit, :update]
-  before_action :correct_user,   only: [:edit, :update]
-  before_action :admin_user,     only: :destroy
+class Api::ApiController < ApplicationController
 before_filter :fetch_user, :except => [:index, :create]
 respond_to :json, :xml
+
  def fetch_user
     @user = User.find_by_id(params[:id])
   end
 
   def index
-    @users = User.paginate(page: params[:page])
-    #@users = User.where("name = ? or email = ?", params[:name], params[:email])
-    #respond_to do |format|
-     # format.json { render json: @users }
-      #format.xml { render xml: @users }
-   # end
+    #@users = User.paginate(page: params[:page])
+    @users = User.where("name = ? or email = ?", params[:name], params[:email])
+    respond_to do |format|
+     format.json { render json: @users }
+      format.xml { render xml: @users }
+   end
   end
 
   def show
-    @user = User.find(params[:id])
-    #respond_to do |format|
-     # format.json { render json: @user }
-      #format.xml { render xml: @user }
-    #end
+    respond_to do |format|
+    format.json { render json: @user }
+     format.xml { render xml: @user }
+    end
   end
 
   def new
