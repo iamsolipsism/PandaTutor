@@ -19,6 +19,7 @@ respond_to :json, :xml
 
   def show
     @user = User.find(params[:id])
+    @courses = @user.courses.paginate(page: params[:page])
     #respond_to do |format|
      # format.json { render json: @user }
       #format.xml { render xml: @user }
@@ -63,7 +64,7 @@ respond_to :json, :xml
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation, :avatar)
+                                   :password_confirmation, :university, :avatar)
     end
 
     # Before filters

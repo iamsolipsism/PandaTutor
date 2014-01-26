@@ -1,0 +1,6 @@
+<li>
+  <span class="content"><%= course.courseName %></span>
+  <span class="content">Hola<%= course.grade %></span>
+</li>
+
+

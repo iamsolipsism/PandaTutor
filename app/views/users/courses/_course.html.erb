@@ -1,0 +1,10 @@
+<li>
+  <span class="content"><%= course.courseName %></span>
+  <span class="content"><%= course.grade %></span>
+  <% if current_user?(course.user) %>
+    <%= link_to "delete", course, method: :delete,
+                                     data: { confirm: "You sure?" },
+                                     title: course.courseName %>
+  <% end %>
+</li>
+

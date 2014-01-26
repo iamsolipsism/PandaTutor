@@ -19,20 +19,24 @@ class UsersController < ApplicationController
   def index
 #    @users = User.where("name = ? or university = ? or grade = ?", params[:name], params[:email], params[:grade])
 #sample api call: http://localhost:3000/api/v1/users?name=Rylai&email=DontPlayLeague@gmail.com
-    @users = User.where("name = ? or email = ?", params[:name], params[:email])
-#for index in 0 ... @users.size
- # if (@users[index].kurasus.where("class = ?", params[:class]) == nil)
-  #  @users.delete_at(index)
-  #end
-#end
+    @users = User.where("university = ?", params[:university])
 
+flagHasTakenWithGrade = false #assume false by default
+courseNameParams = params[:courseName]
+gradeNameParams = params[:grade]
 
-for index in 0 ... @users.size
- if (@users.at(index).where("id = ?", params[:id]) == nil)
-    puts "hi"
-   @users.delete_at(index)
+for index1 in 0 ... @users.size
+  for index2 in 0 ... @users[index1].courses.size
+    course = @users[index1].courses[index2] 
+    if(course.courseName == courseNameParams && course.grade == gradeNameParams)
+      flagHasTakenWithGrade = true
+    end
   end
+  if(!flagHasTakenWithGrade)
+    @users.delete_at(index1)
 end
+end
+
 
     respond_to do |format|
       format.json { render json: @users }

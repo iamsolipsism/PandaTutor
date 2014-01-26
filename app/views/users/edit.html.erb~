@@ -12,9 +12,6 @@
       <%= f.label :email %>
       <%= f.text_field :email %>
 
-      <%= f.label :university %>
-      <%= f.text_field :university %>
-
       <%= f.label :password %>
       <%= f.password_field :password %>
 

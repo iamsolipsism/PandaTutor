@@ -5,8 +5,8 @@
       <h1>
         <%= image_tag @user.avatar_url.to_s %>
         <center><%= @user.name %><br>
-        Studies at: <%= @user.university %><br>
-        Contact at:<%= @user.email %><br>
+        <%= @user.university %><br>
+        <%= @user.email %><br>
 </center>
       </h1>
     </section>

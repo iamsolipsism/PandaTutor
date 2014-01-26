@@ -3,14 +3,17 @@
 
 <div class="row">
   <div class="span6 offset3">
-    <%= form_for(@user) do |f| %>
-			<%= render 'shared/error_messages' %>
+   <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
 
       <%= f.label :name %>
       <%= f.text_field :name %>
 
       <%= f.label :email %>
       <%= f.text_field :email %>
+
+ <%= f.label :university %>
+      <%= f.text_field :university %>
 
       <%= f.label :password %>
       <%= f.password_field :password %>
@@ -20,5 +23,8 @@
 
       <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
     <% end %>
+
+    <%= gravatar_for(@user) %>
+    <a href="http://gravatar.com/emails">change</a>
   </div>
 </div>
