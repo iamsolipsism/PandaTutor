@@ -1,4 +1,4 @@
-<%= form_for :class do |f| %>
+<%= form_for @kurasu do |f| %>
   <% if @kurasu.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@kurasu.errors.count, "error") %> prohibited
