@@ -22,24 +22,21 @@ class UsersController < ApplicationController
 #note all 3 must be present to make the call
 
     @users = User.where("university = ?", params[:university])
+    flagHasTakenWithGrade = false #assume false by default
+    courseNameParams = params[:courseName]
+    gradeNameParams = params[:grade]
 
-flagHasTakenWithGrade = false #assume false by default
-courseNameParams = params[:courseName]
-gradeNameParams = params[:grade]
-
-for index1 in 0 ... @users.size
-  for index2 in 0 ... @users[index1].courses.size
-    course = @users[index1].courses[index2] 
-    if(course.courseName == courseNameParams && course.grade == gradeNameParams)
-      flagHasTakenWithGrade = true
+    for index1 in 0 ... @users.size
+      for index2 in 0 ... @users[index1].courses.size
+        course = @users[index1].courses[index2] 
+        if(course.courseName == courseNameParams && course.grade == gradeNameParams)
+          flagHasTakenWithGrade = true
+        end
+      end
+      if(!flagHasTakenWithGrade)
+        @users.delete_at(index1)
+      end
     end
-  end
-  if(!flagHasTakenWithGrade)
-    @users.delete_at(index1)
-end
-end
-
-
     respond_to do |format|
       format.json { render json: @users }
       format.xml { render xml: @users }

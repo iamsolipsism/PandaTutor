@@ -2,9 +2,9 @@ class User < ActiveRecord::Base
   has_many :courses, dependent: :destroy
   before_save { self.email = email.downcase }
   validates :name, presence: true, length: { maximum: 50 }
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence:   true,
-                    format:     { with: VALID_EMAIL_REGEX },
+                    :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create },
+                    :format => { :with => /.edu\Z/i, :on => :create },
                     uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, length: { minimum: 6 }
