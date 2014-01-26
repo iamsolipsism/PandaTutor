@@ -15,7 +15,7 @@ class KurasusController < ApplicationController
 	end
 
 	def create
-		@kurasu = Kurasu.new(params[:kurasu].permit(course, :grade))
+		@kurasu = Kurasu.new(params[:kurasu].permit(department, :grade))
 
 		if @kurasu.save
 			redirect_to @kurasu
@@ -31,7 +31,7 @@ class KurasusController < ApplicationController
 	def update
 		@kurasu = Kurasu.find(params[:id])
 
-		if @kurasu.update(params[:kurasu].permit(course, :grade))
+		if @kurasu.update(params[:kurasu].permit(department, :grade))
 			redirect_to @kurasu
 		else
 			render 'edit'
@@ -44,6 +44,6 @@ class KurasusController < ApplicationController
 
 	private
 	   def kurasu_params
-	   	   params.require(:kurasu).permit(course, :grade)
+	   	   params.require(:kurasu).permit(department, :grade)
 	   end
 end
