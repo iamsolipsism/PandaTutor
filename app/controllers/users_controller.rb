@@ -19,6 +19,7 @@ respond_to :json, :xml
 
   def show
     @user = User.find(params[:id])
+    @courses = @user.courses.paginate(page: params[:page])
     #respond_to do |format|
      # format.json { render json: @user }
       #format.xml { render xml: @user }
@@ -42,10 +43,11 @@ respond_to :json, :xml
   end
 
 	def create
-    @user = User.new(user_params)
+    uniID = user_params[:university].downcase.gsub!(/\s/,'')
+    @user = User.new(user_params, :universityIdentifier => uniID)
     if @user.save
       sign_in @user
-      flash[:success] = "Welcome to the Panda Tutor!"
+      flash[:success] = "Welcome to PandaTutor!"
       redirect_to @user
     else
       render 'new'
@@ -63,7 +65,7 @@ respond_to :json, :xml
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation, :avatar)
+                                   :password_confirmation, :university, :avatar)
     end
 
     # Before filters

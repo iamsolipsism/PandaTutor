@@ -68,17 +68,17 @@ describe "Authentication" do
         end
       end
       
-      describe "in the Microposts controller" do
+      describe "in the Courses controller" do
 
         describe "submitting to the create action" do
-          before { post microposts_path }
+          before { post courses_path }
           specify { response.should redirect_to(signin_path) }
         end
 
         describe "submitting to the destroy action" do
           before do
-            micropost = FactoryGirl.create(:micropost)
-            delete micropost_path(micropost)
+            course = FactoryGirl.create(:courses)
+            delete courses_path(course)
           end
           specify { response.should redirect_to(signin_path) }
         end
