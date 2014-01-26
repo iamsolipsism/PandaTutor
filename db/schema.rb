@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140126011732) do
+ActiveRecord::Schema.define(version: 20140126024150) do
 
   create_table "kurasus", force: true do |t|
-    t.string   "department"
+    t.string   "course"
     t.string   "grade"
     t.datetime "created_at"
     t.datetime "updated_at"
