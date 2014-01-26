@@ -1,4 +1,6 @@
 SampleApp::Application.routes.draw do
+  resources :searches
+
 namespace :api do
   namespace :v1 do
    resources :login, :defaults => { :format => 'json' }
@@ -6,16 +8,16 @@ namespace :api do
   end
 end
         resources :kurasus
+        resources :courses
 	resources :users
 	resources :sessions, only: [:new, :create, :destroy]
         resources :courses, only: [:create, :destroy]
-  resources :search
 
 	root 'static_pages#home'
   match '/help',    to: 'static_pages#help',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
-
+  match '/searches', to: 'searches#new', via:'get'
 	match '/signup', 	to: 'users#new',						via:
  'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
